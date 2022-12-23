@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root {
+    /* Primary */
+
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+
+    /* Neutral */
+
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    width: 90vw;
+    margin: 0 auto;
+    max-height: 100vh;
+}
+
+/* ======================
+ STARTING OF NAVBAR STYLING
+    ====================== */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1; */
+    margin-top: 1rem;
+}
+
+.navbar-brand img {
+    width: 80%;
+    height: auto;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin: 0 1rem;
+}
+
+.navbar-links a {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--dark-grayish-blue);
+    text-decoration: none;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+/* ======================
+    END  OF NAVBAR STYLING 
+    ====================== */
+.container {
+    display: grid;
+    justify-content: center;
+    grid-gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "box1 box1 box2" "box3 box4 box2";
+    margin-top: 20px;
+}
+
+.box-1 {
+    grid-area: box1;
+}
+
+.box-1 #desktop-img,
+.box-1 #mobile-img {
+    width: 100%;
+    height: auto;
+}
+
+.box-2 {
+    grid-area: box2;
+    background-color: var(--very-dark-blue);
+    padding: 1rem;
+    align-self: auto;
+}
+
+.box-2 h1 {
+    font-size: 2.4rem;
+    color: var(--soft-orange);
+}
+
+.box-2 ul {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.box-2 ul li h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--off-white);
+    margin-bottom: 1rem;
+}
+
+.box-2 ul li p {
+    font-size: 16px;
+    color: var(--dark-grayish-blue);
+    line-height: 24px;
+}
+
+.box-3 {
+    grid-area: box3;
+}
+
+.box-3 h1 {
+    max-width: 80%;
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.box-4 {
+    grid-area: box4;
+}
+
+.box-4 p {
+    font-size: 16px;
+    line-height: 23px;
+    color: var(--dark-grayish-blue);
+    font-weight: 500;
+}
+
+.box-4 button {
+    color: var(--off-white);
+    background-color: var(--soft-red);
+    border: none;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+.box-4 button:hover {
+    cursor: pointer;
+    background-color: var(--very-dark-blue);
+}
+
+hr {
+    outline: none;
+    border: 0.7px solid hsla(233, 8%, 79%, 0.3);
+    margin: 2rem 0;
+}
+
+/* ======================
+    FEATURED SECTION
+    ====================== */
+
+.feature {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    margin-top: 20px;
+}
+
+.article {
+    display: flex;
+}
+
+.img-part {
+    max-width: 90%;
+    height: auto;
+}
+
+.img-part img {
+    width: 100px;
+    height: auto;
+}
+
+.text-part {
+    padding-left: 15px;
+    padding-right: 25px;
+}
+
+.text-part h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--grayish-blue);
+}
+
+.text-part h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--very-dark-blue);
+}
+
+.text-part p {
+    font-size: 1rem;
+    color: var(--dark-grayish-blue);
+    line-height: 25px;
+    margin-top: 10px;
+
+}
+
+.navbar-links a:hover,
+.text-part h4:hover {
+    color: var(--soft-red);
+    cursor: pointer;
+}
+
+/* ======================
+    STARING  OF MOBILE DESIGN
+    ====================== */
+
+@media (max-width: 600px) {
+    body {
+        width: 100vw;
+        padding: 1rem;
+        position: relative;
+    }
+
+    /* ======================
+    STARTING OF NAVBAR STYLING
+    ====================== */
+    .navbar-links {
+        display: none;
+        position: absolute;
+        background-color: var(--off-white);
+        min-height: 100vh;
+        top: 0;
+        right: 0;
+        width: 80%;
+        padding-top: 5rem;
+    }
+
+    .navbar-links li a {
+        display: flex;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-links.show {
+        display: block;
+    }
+
+    img.close-menu {
+        display: none;
+        position: relative;
+    }
+
+    /* ======================
+        END OF NAVBAR STYLING
+    ====================== */
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: "box1" "box3" "box4" "box2";
+        margin-top: 20px;
+    }
+    .box-2 h1{
+        font-size: 2rem;
+    }
+    .box-2 ul li h2{
+        font-size: 1rem;
+    }
+    .box-2 ul li p{
+        font-size: 14px;
+    }
+    .box-3 h1{
+        max-width: 100%;
+        font-size: 31px;
+    }
+    .box-4 p{
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .box-4 button{
+        font-size: 12px;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    /* ======================
+       FEATURED SECTION
+    ====================== */
+    .feature {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 20px;
+    }
+
+    .img-part img {
+        width: 80px;
+        height: auto;
+    }
+
+    .text-part {
+        padding-right: 5px;
+    }
+
+    .text-part h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .text-part h4 {
+        font-size: 13px;
+
+    }
+
+    .text-part p {
+        line-height: 18px;
+        font-size: 11px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
